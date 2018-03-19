@@ -1,0 +1,8 @@
+
+When using react.js webpack -wd does not bundle
+https://medium.com/bcgdv-engineering/when-using-react-js-webpack-dev-server-does-not-bundle-c2d340b0a3e8
+Resolved by changing script location
+
+```old <script src="/bundle.js" charset="utf-8"></script>```
+
+```new <script src="bundle.js" charset="utf-8"></script>```
