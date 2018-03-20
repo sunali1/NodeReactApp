@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
-const App = () => {
+const App = (props) => {
   return (
     <h2 className= "text-center">
-      Hello React Components!
+      {props.headerMessage}
     </h2>
   );
+};
+App.propTypes = {
+  headerMessage: PropTypes.string
+};
+App.defaultProps = {
+  headerMessage: 'Hello header'
 };
 
 ReactDOM.render(
