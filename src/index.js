@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types';
 
 const Header = ({message}) => {
   return(
-    <h2 className="text-center">
+    <h2 className="Header text-center">
       {message}
     </h2>
   );
@@ -19,7 +19,7 @@ Header.defaultProps = {
 
 const App = () => {
   return (
-    <div>
+    <div className= "App">
       <Header message= 'Naming Contests' />
     </div>
   );
