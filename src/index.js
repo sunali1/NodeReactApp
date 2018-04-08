@@ -2,22 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {PropTypes} from 'prop-types';
 
-const App = (props) => {
-  return (
-
+const Header = ({message}) => {
+  return(
     <h2 className="text-center">
-      {props.headerMessage}
+      {message}
     </h2>
   );
 };
-
-App.propTypes = {
-  headerMessage: PropTypes.string.isRequired
+Header.propTypes = {
+  message: PropTypes.string.isRequired
 };
 
-App.defaultProps = {
-  headerMessage: 'Hello Default Message'
-},
+Header.defaultProps = {
+  message: 'Hello Default Message'
+};
+
+const App = () => {
+  return (
+    <div>
+      <Header message= 'Naming Contests' />
+    </div>
+  );
+};
 
 ReactDOM.render(
   <App/>,
