@@ -1,22 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import {PropTypes} from 'prop-types';
 
 const App = (props) => {
   return (
-    <h2 className= "text-center">
+
+    <h2 className="text-center">
       {props.headerMessage}
     </h2>
   );
 };
+
 App.propTypes = {
-  headerMessage: PropTypes.string
-};
-App.defaultProps = {
-  headerMessage: 'Hello header'
+  headerMessage: PropTypes.string.isRequired
 };
 
+App.defaultProps = {
+  headerMessage: 'Hello Default Message'
+},
+
 ReactDOM.render(
-  <App />,
+  <App/>,
   document.getElementById('root')
 );
