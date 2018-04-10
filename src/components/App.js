@@ -6,15 +6,6 @@ class App extends React.Component {
     pageHeader: 'Naming Contests',
     test: 47
   };
-  componentDidMount(){
-    console.log('did Mount');
-    debugger;
-  }
-  componentWillUnmount(){
-    console.log('will Unmount');
-    debugger;
-  }
-
   render(){
     return (
       <div>
