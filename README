@@ -10,3 +10,12 @@ Resolved by changing script location
 ```old <script src="/bundle.js" charset="utf-8"></script>```
 
 ```new <script src="bundle.js" charset="utf-8"></script>```
+
+TO FIX
+1. USING SASS FOR NODE: CSS STYLING IS NOT WORKING
+
+2. In terminal after running `npm run dev` :error 
+WARNING in ./~/react/index.js
+There is another module with an equal name when case is ignored.
+This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
+Rename module if multiple modules are expected or use equal casing if one module is expected.
