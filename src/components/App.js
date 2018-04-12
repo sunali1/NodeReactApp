@@ -3,10 +3,8 @@ import Header from './Header';
 import ContestPreview from './ContestPreview';
 
 class App extends React.Component {
-
   state = {
     pageHeader: 'Naming Contests',
-    test: 47
   };
   render(){
     return (
@@ -15,7 +13,7 @@ class App extends React.Component {
           <Header message= {this.state.pageHeader} />
         </div>
         {this.props.contests.map(contest =>
-          <ContestPreview{...contest} />
+          <ContestPreview {...contest} />
         )}
       </div>
     );
