@@ -14,17 +14,24 @@ server.use(sassMiddleware({
 }));
 server.set('view engine', 'ejs');
 
-import './serverRender'; //this first serves the data before React kicks in
+import serverRender from './serverRender'; //this first serves the data before React kicks in
 
 server.get('/', (req, res) => {
-  res.render('index', {
-    content: '...'
-  });
+  serverRender()
+    .then(content => {
+      res.render('index', {
+        content
+      });
+    })
+    .catch(error => {
+      console.log(error);
+    });
 });
+
 //express middleware
 server.use('/api', router);
 server.use(express.static('public'));
 
 server.listen(config.port, config.host, () => {
-  console.info('Express listening on port ', config.port);
+  console.info('Express listening on port', config.port);
 });
