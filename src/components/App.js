@@ -1,6 +1,7 @@
 import React from 'react';
+//import PropTypes from 'prop-types';
 import Header from './Header';
-import ContestPreview from './ContestPreview';
+import ContestList from './ContestList';
 
 
 
@@ -9,21 +10,19 @@ class App extends React.Component {
     pageHeader: 'Naming Contests',
     contests: this.props.initialContests
   };
-  componentDidMount() {
 
+  // App.propTypes = {
+  //   initialContests: PropTypes.array
+  // };
+  componentDidMount() {
   }
   componentWillUnmount() {
-
   }
   render(){
     return (
       <div className= "App">
-        <Header message= {this.state.pageHeader} />
-        <div>
-          {this.state.contests.map(contest =>
-            <ContestPreview key={contest.id} {...contest} />
-          )}
-        </div>
+        <Header message= {this.state.pageHeader} />,
+        <ContestList contests={this.state.contests} />
       </div>
     );
   }
