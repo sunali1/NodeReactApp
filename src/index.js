@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 import App from './components/App';
 
-ReactDOM.hydrate(
-  <App initialContests={[]}/>,
-  document.getElementById('root')
-);
+
+axios.get('/api/contests')
+  .then(response => {
+    ReactDOM.hydrate(
+      <App initialContests={response.data.contests}/>,
+      document.getElementById('root')
+    );
+  })
+  .catch(console.error);
