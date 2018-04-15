@@ -21,7 +21,7 @@ class App extends React.Component {
   render(){
     return (
       <div className= "App">
-        <Header message= {this.state.pageHeader} />,
+        <Header message= {this.state.pageHeader} />
         <ContestList contests={this.state.contests} />
       </div>
     );

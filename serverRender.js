@@ -14,6 +14,5 @@ const serverRender = () =>
         <App initialContests={response.data.contests} />
       );
     });
-
-console.log('THIS IS THE FUNCTION SERVERRENDER', serverRender());
+    
 export default serverRender;

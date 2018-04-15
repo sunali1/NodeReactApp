@@ -12,6 +12,7 @@ server.use(sassMiddleware({
   src: path.join(__dirname, 'sass'),
   dest: path.join(__dirname, 'public')
 }));
+
 server.set('view engine', 'ejs');
 
 import serverRender from './serverRender'; //this first serves the data before React kicks in
