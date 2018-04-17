@@ -1,5 +1,5 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Header from './Header';
 import ContestList from './ContestList';
 
@@ -10,10 +10,6 @@ class App extends React.Component {
     pageHeader: 'Naming Contests',
     contests: this.props.initialContests
   };
-
-  // App.propTypes = {
-  //   initialContests: PropTypes.array
-  // };
   componentDidMount() {
   }
   componentWillUnmount() {
@@ -28,4 +24,7 @@ class App extends React.Component {
   }
 }
 
+App.propTypes = {
+  initialContests: PropTypes.array
+};
 export default App;
