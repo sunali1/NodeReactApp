@@ -1,37 +1,13 @@
-```WORK IN PROGRESS```
+Naming Contests
 
+This is a Node.js ReactJs application powered by Express.
 
-When using react.js webpack -wd does not bundle
-https://medium.com/bcgdv-engineering/when-using-react-js-webpack-dev-server-does-not-bundle-c2d340b0a3e8
-Resolved by changing script location
+Setup
+Clone this repo to your desktop and run npm install to install all the dependencies.
 
-```old <script src="/bundle.js" charset="utf-8"></script>```
+You might want to look into config.json to make change the port you want to use.
 
-```new <script src="bundle.js" charset="utf-8"></script>```
+Usage
+After you clone this repo to your desktop, go to its root directory and run npm install to install its dependencies.
 
-TO FIX
-1. USING SASS FOR NODE: CSS STYLING IS NOT WORKING
-
-2. In terminal after running `npm run dev` :error
-WARNING in ./~/react/index.js
-There is another module with an equal name when case is ignored.
-This can lead to unexpected behavior when compiling on a filesystem with other case-semantic.
-Rename module if multiple modules are expected or use equal casing if one module is expected.
-
-
-other errors
-
-in ./src/index.js
-changed render() to hydrate() because
-
-render() Becomes hydrate()
-When you upgrade SSR code from React 15 to React 16, though, you will probably come across the following warning in your browser:
-
-react-dom.development.js:11524 Warning: render(): Calling ReactDOM.render() to hydrate server-rendered markup will stop working in React v17. Replace the ReactDOM.render() call with ReactDOM.hydrate() if you want React to attach to the server HTML.
-
-
-Yet another helpful React warning. render() is now hydrate()!
-It turns out that in React 16, there are now two different methods for rendering on the client side: render() for when you are rendering the content solely on the client side, and hydrate() for when you are rendering on top of server-side rendered markup. Because React is backwards compatible, render() will continue to work when rendering on top of server-generated markup in React 16, but you should change those calls to hydrate() to quiet the warning and prepare your code for React 17. The code snippet we showed above would change to:
-
-import { hydrate } from "react-dom"
-import MyPage from "./MyPage"
+Once the dependencies are installed, you can run npm start to start the application. You will then be able to access it at localhost:8080
