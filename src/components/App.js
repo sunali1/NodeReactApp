@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import ContestList from './ContestList';
+// import Contest from './Contest';
 
 
 const pushState = (obj, url) => {
@@ -22,8 +23,12 @@ class App extends React.Component {
       {currentContestId: contestId },
       `/contests/${contestId}`
     );
+    //display contests by contestsId
+    this.setState({
+      pageHeader: this.state.contests[contestId].contestName,
+      currentContestId: contestId
+    });
   };
-
   render(){
     return (
       <div className= "App">
@@ -39,4 +44,5 @@ class App extends React.Component {
 App.propTypes = {
   initialContests: PropTypes.object
 };
+
 export default App;
