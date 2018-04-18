@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 class ContestPreview extends React.Component {
   handleClick = () => {
-    this.props.onClick(this.props.id),
-    console.log(this.props.categoryName);
+    this.props.onClick(this.props.id)
   };
   render() {
     return(

@@ -37,6 +37,6 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  initialContests: PropTypes.array
+  initialContests: PropTypes.object
 };
 export default App;
