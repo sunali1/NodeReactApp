@@ -11,9 +11,10 @@ const pushState = (obj, url) => {
 };
 
 class App extends React.Component {
-  state = {
-    contests: this.props.initialContests
+  static propTypes = {
+    initialData: PropTypes.object.isRequired
   };
+  state = this.props.initialData;
   componentDidMount() {
   }
   componentWillUnmount() {
@@ -61,9 +62,5 @@ class App extends React.Component {
     );
   }
 }
-
-App.propTypes = {
-  initialContests: PropTypes.object
-};
 
 export default App;
