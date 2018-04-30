@@ -12,7 +12,6 @@ const pushState = (obj, url) => {
 
 class App extends React.Component {
   state = {
-    pageHeader: 'Naming Contests',
     contests: this.props.initialContests
   };
   componentDidMount() {
@@ -26,7 +25,6 @@ class App extends React.Component {
     );
     api.fetchContest(contestId).then(contest => {
       this.setState({
-        pageHeader: contest.contestName,
         currentContestId: contest.id,
         contests: {
           ...this.state.contests,
@@ -36,7 +34,15 @@ class App extends React.Component {
     });
   }
   currentContest() {
-    this.state.contests[this.state.currentContestId];
+    return this.state.contests[this.state.currentContestId];
+  }
+  //pageHeader -if currentContest has an Id return its name or return 'Naming Contests'
+  pageHeader() {
+    if(this.state.currentContestId){
+      return this.currentContest().contestName;
+    }
+
+    return 'Naming Contests';
   }
   currentContent(){
     if (this.state.currentContestId){
@@ -49,7 +55,7 @@ class App extends React.Component {
   render(){
     return (
       <div className= "App">
-        <Header message= {this.state.pageHeader} />
+        <Header message= {this.pageHeader()} />
         {this.currentContent()}
       </div>
     );
