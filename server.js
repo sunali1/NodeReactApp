@@ -17,8 +17,8 @@ server.set('view engine', 'ejs');
 
 import serverRender from './serverRender'; //this first serves the data before React kicks in
 
-server.get('/', (req, res) => {
-  serverRender()
+server.get(['/', '/contests/:contestId'], (req, res) => {
+  serverRender(req.params.contestId)
     .then(({ initialMarkup, initialData }) => {
       res.render('index', {
         initialMarkup,
