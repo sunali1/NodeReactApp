@@ -14,3 +14,6 @@ Once the dependencies are installed, in the terminal cd into NodeReactApp and ru
 
 Open another tab and cd into NodeReactApp again and run `npm start` to start the application.
 You will then be able to access it at localhost:8080
+
+
+CURRENTLY AT 6.4

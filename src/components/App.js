@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import ContestList from './ContestList';
 import Contest from './Contest';
+import * as api from '../api';
 
 
 const pushState = (obj, url) => {
@@ -23,14 +24,23 @@ class App extends React.Component {
       {currentContestId: contestId },
       `/contests/${contestId}`
     );
-    this.setState({
-      pageHeader: this.state.contests[contestId].contestName,
-      currentContestId: contestId
+    api.fetchContest(contestId).then(contest => {
+      this.setState({
+        pageHeader: contest.contestName,
+        currentContestId: contest.id,
+        contests: {
+          ...this.state.contests,
+          [contest.id]: contest
+        }
+      });
     });
-  };
+  }
+  currentContest() {
+    this.state.contests[this.state.currentContestId];
+  }
   currentContent(){
     if (this.state.currentContestId){
-      return <Contest {...this.state.contests[this.state.contestId]} />;
+      return <Contest {...this.currentContest()} />;
     }
     return <ContestList
       onContestClick={this.fetchContest}
